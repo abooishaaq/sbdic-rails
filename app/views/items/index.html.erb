@@ -1,0 +1,14 @@
+<p class="text-pink-500"><%= notice %></p>
+
+<h1 class="text-4xl my-8 decoration-pink-700 underline">Inventory Items</h1>
+
+<%= link_to "New item", new_item_path, class: "bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded" %>
+
+<div id="items" class="flex flex-col items-start w-screen px-12">
+  <% @items.each do |item| %>
+    <div class="flex flex-col justify-center items-center max-w-screen w-full my-12 p-8 border-2 rounded">
+      <%= render item %>
+      <%= link_to "Show", item, class: "text-pink-500 hover:text-pink-700 font-bold duration-200" %>
+    </div>
+  <% end %>
+</div>
